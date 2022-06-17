@@ -6,7 +6,7 @@ import 'package:whatsapp1/screens/chat_screen.dart';
 import 'package:whatsapp1/screens/status_screen.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: WhatsApp(),
     debugShowCheckedModeBanner: false,
   ));
