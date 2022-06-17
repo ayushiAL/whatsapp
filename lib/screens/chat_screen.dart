@@ -23,7 +23,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
-                  itemCount: WhatsAppList.chacd tList.length,
+                  itemCount: WhatsAppList.chatList.length,
                   itemBuilder: (context,index) {
                     Chats model = WhatsAppList.chatList[index];
                     return InkWell(
