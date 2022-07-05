@@ -29,7 +29,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     return InkWell(
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage(
-                          image: model.imageUrl,
+                          img: model.imageUrl,
                           name: model.name,
                         )));
                       },
