@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:whatsapp1/practice/home_screen.dart';
 import 'package:whatsapp1/practice/screens/account_screen.dart';
 import 'package:whatsapp1/practice/screens/add_screen.dart';
@@ -13,6 +14,8 @@ class Screens extends StatefulWidget {
 }
 
 class _ScreensState extends State<Screens> {
+  String? photo;
+  ImagePicker imagePicker = ImagePicker();
   int curIndex = 0;
   final pageList = [
     const HomeScreen(),
@@ -56,8 +59,11 @@ class _ScreensState extends State<Screens> {
               ),
             ),
             InkWell(
-              onTap: () {
+              onTap: () async {
+                final fileImage =
+                    await imagePicker.pickImage(source: ImageSource.camera);
                 setState(() {
+                  photo = fileImage?.path;
                   curIndex = 2;
                 });
               },
@@ -90,7 +96,7 @@ class _ScreensState extends State<Screens> {
               ),
             ),
             InkWell(
-              onTap: () {
+              onTap: () async {
                 setState(() {
                   curIndex = 4;
                 });

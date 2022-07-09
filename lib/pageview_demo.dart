@@ -15,7 +15,7 @@ class _PageViewDemoState extends State<PageViewDemo> {
     Icons.more,
     Icons.cancel,
   ];
-  List name = ['ayushi', 'dishat', 'aniket', 'dhulli'];
+  List name = ['ayushi', 'dishat', 'pooja', 'dhulli'];
   PageController controller = PageController();
   int currentPage = 0;
 
