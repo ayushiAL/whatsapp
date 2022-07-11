@@ -45,26 +45,26 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     ),
                     height: 45,
                     width: 45,
-                    margin: EdgeInsets.only(top: 15),
+                    margin:const EdgeInsets.only(top: 15),
                   ),
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                            margin: const EdgeInsets.only(left: 19, top: 13),
-                            child: Text(
-                              widget.name ?? "",
-                              style: const TextStyle(
-                                  fontFamily: "Roboto_",
-                                  fontWeight: FontWeight.w900,
-                                  fontSize: 15,
-                                  color: Colors.white),
-                            )),
-                        Container(
-                          margin: const EdgeInsets.only(
-                              left: 19, top: 2, right: 15),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 19,top: 15),
+                          child: Text(
+                            widget.name ?? "",
+                            style: const TextStyle(
+                                fontFamily: "Roboto_",
+                                fontWeight: FontWeight.w900,
+                                fontSize: 15,
+                                color: Colors.white),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 19,top: 2),
                           child: Text(
                             widget.uname ?? "",
                             style: const TextStyle(
@@ -81,9 +81,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     onTap: (){
                       Navigator.pop(context);
                     },
-                    child: Container(
-                      margin:const EdgeInsets.only(top: 18, right: 20),
-                      child: const Icon(
+                    child:const Padding(
+                      padding: const EdgeInsets.only(top: 15,right: 15),
+                      child: Icon(
                         Icons.clear,
                         color: Colors.white,
                       ),

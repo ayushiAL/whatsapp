@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp1/practice/home_screen.dart';
+import 'package:whatsapp1/practice/screens/screens.dart';
+import 'package:whatsapp1/practice/screens/widgets/comman_appBar.dart';
+import 'package:whatsapp1/practice/screens/widgets/custom_elevated_button.dart';
+import 'package:whatsapp1/practice/screens/widgets/input_textfield.dart';
 import 'package:whatsapp1/utils/size.dart';
+
+import 'screens/widgets/heading_text.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({Key? key}) : super(key: key);
@@ -13,68 +20,48 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
+      appBar: CommanAppBar(context, "", true, false),
       body: Container(
         margin: EdgeInsets.only(left: 15, right: 15),
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.06,
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: const Icon(
-                  Icons.arrow_back,
-                  color: Colors.grey,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.04,
-            ),
             Container(
               alignment: Alignment.centerLeft,
               // color: Colors.red,
-              child: Text(
-                "Log in",
-                style: headingText,
-              ),
+              child: HeadingText( text: 'Log in',),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.04,
             ),
-            Container(
-              child: textField,
-            ),
+            InputTextField(
+                isObSecureText: false,
+                hintText: "Enter name",
+                controller: emailController),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
-            Container(
-              child: passWordTextField,
-            ),
+            InputTextField(
+                isObSecureText: true,
+                hintText: "Enter password",
+                controller: passWordController),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
-            Container(
-              alignment: Alignment.center,
-              width: double.infinity,
-              height: 55,
-              decoration: BoxDecoration(color: Colors.black,borderRadius: BorderRadius.circular(6)),
-              child: const Text(
-                "LOG IN",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: "Roboto_",
-                    fontWeight: FontWeight.w900,
-                    fontSize: 15),
+            Padding(
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              child: CustomElevatedButton(
+                navigation: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Screens()));
+                },
+                text: 'LOG IN',
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
+

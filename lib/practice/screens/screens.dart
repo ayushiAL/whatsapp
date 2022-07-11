@@ -32,7 +32,7 @@ class _ScreensState extends State<Screens> {
       bottomNavigationBar: Container(
         height: 80,
         decoration:
-            BoxDecoration(border: Border(top: BorderSide(color: Colors.grey))),
+            const BoxDecoration(border: Border(top: BorderSide(color: Colors.grey))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -42,7 +42,7 @@ class _ScreensState extends State<Screens> {
                   curIndex = 0;
                 });
               },
-              child: Icon(
+              child:const Icon(
                 Icons.home_outlined,
                 color: Colors.blueGrey,
               ),
@@ -53,7 +53,7 @@ class _ScreensState extends State<Screens> {
                   curIndex = 1;
                 });
               },
-              child: Icon(
+              child:const Icon(
                 Icons.search,
                 color: Colors.blueGrey,
               ),
@@ -72,13 +72,13 @@ class _ScreensState extends State<Screens> {
                 width: 90,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  gradient: LinearGradient(
+                  gradient:const LinearGradient(
                     colors: [Colors.pink, Colors.red],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
                 ),
-                child: Icon(
+                child:const Icon(
                   Icons.add,
                   color: Colors.white,
                 ),
@@ -90,18 +90,18 @@ class _ScreensState extends State<Screens> {
                   curIndex = 3;
                 });
               },
-              child: Icon(
+              child:const Icon(
                 Icons.maps_ugc,
                 color: Colors.blueGrey,
               ),
             ),
             InkWell(
-              onTap: () async {
+              onTap: ()  {
                 setState(() {
                   curIndex = 4;
                 });
               },
-              child: Icon(
+              child:const Icon(
                 Icons.account_circle_outlined,
                 color: Colors.blueGrey,
               ),

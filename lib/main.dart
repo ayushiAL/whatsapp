@@ -4,19 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:whatsapp1/pageview_demo.dart';
 import 'package:whatsapp1/practice/first_screen.dart';
+import 'package:whatsapp1/practice/screens/search_list.dart';
 import 'package:whatsapp1/screens/calls_screen.dart';
 import 'package:whatsapp1/screens/chat_screen.dart';
 import 'package:whatsapp1/screens/status_screen.dart';
 import 'package:whatsapp1/stack_demo.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: FirstScreen(),
-    debugShowCheckedModeBanner: false,
-  ));
   SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-
+    const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+  );
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: FirstScreen(),
+  ));
 }
 
 class WhatsApp extends StatefulWidget {
@@ -98,8 +99,8 @@ class _WhatsAppState extends State<WhatsApp> {
                               child: Container(
                                 margin: EdgeInsets.only(
                                     left: 10, top: 15, right: 20),
-                                child: Icon(Icons.more_vert,
-                                    color: Colors.white),
+                                child:
+                                    Icon(Icons.more_vert, color: Colors.white),
                               ),
                             ),
                           ],

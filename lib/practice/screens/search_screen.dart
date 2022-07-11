@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp1/practice/screens/widgets/comman_appBar.dart';
 import 'package:whatsapp1/utils/size.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -18,29 +19,33 @@ class _SearchScreenState extends State<SearchScreen> {
     'https://images-na.ssl-images-amazon.com/images/I/41TkrkdrpNL.jpg',
     'https://images.unsplash.com/photo-1587402092301-725e37c70fd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHVwcHklMjBkb2d8ZW58MHx8MHx8&w=1000&q=80'
   ];
+  List searchList = [];
+  String lowerOrgText = '';
+  String lowerSearchText = '';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    searchList = imgList;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CommanAppBar(context, "Search", false, false),
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(left: 15, right: 15),
+          margin: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
               const SizedBox(
-                height: 45,
-              ),
-              Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Search",
-                    style: headingText,
-                  )),
-              const SizedBox(
                 height: 30,
               ),
-              Container(
-                  child: TextField(
+              TextField(
+                onChanged: (value) {
+                  setState(() {});
+                },
                 controller: emailController,
                 decoration: const InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -54,7 +59,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       borderSide: BorderSide(width: 2, color: Colors.black)),
                 ),
                 cursorColor: Colors.black,
-              )),
+              ),
               const SizedBox(
                 height: 30,
               ),
