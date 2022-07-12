@@ -36,8 +36,9 @@ class _FirstScreenState extends State<FirstScreen> {
                     width: 206,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/images/photo.png"),
-                          fit: BoxFit.cover,),
+                        image: AssetImage("assets/images/photo.png"),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),

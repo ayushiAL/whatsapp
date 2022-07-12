@@ -233,3 +233,9 @@ class _WhatsAppState extends State<WhatsApp> {
         ])));
   }
 }
+
+// ctrl+space=show property
+// ctrl+alt+\ =hot reload
+// ctrl+shift+\=hot restart
+//alt+enter=wrap widget
+//ctrl+alt+l=formal
